@@ -28,16 +28,16 @@ class MainActivity : AppCompatActivity() {
         MenuListData()
     }
     private fun MenuListData(){
-        var menu = Menu("Ayam Bakar", R.drawable.grilled_chicken, "Rp 50.000")
+        var menu = Menu("Ayam Bakar", R.drawable.img_grilled_chicken, "Rp 50.000")
         menuList.add(menu)
 
-        menu = Menu("Ayam Goreng", R.drawable.fried_chicken, "Rp 40.000")
+        menu = Menu("Ayam Goreng", R.drawable.img_fried_chicken, "Rp 40.000")
         menuList.add(menu)
 
-        menu = Menu("Ayam Geprek", R.drawable.smashed_chicken, "Rp 40.000")
+        menu = Menu("Ayam Geprek", R.drawable.img_smashed_chicken, "Rp 40.000")
         menuList.add(menu)
 
-        menu = Menu("Sate Ayam", R.drawable.chicken_satay, "Rp 40.000")
+        menu = Menu("Sate Ayam", R.drawable.img_chicken_satay, "Rp 40.000")
         menuList.add(menu)
 
         recyclerViewMenuAdapter?.notifyDataSetChanged()
