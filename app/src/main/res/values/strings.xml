@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Challenge App Ilham</string>
+    <string name="nasi">Nasi</string>
+    <string name="mie">Mie</string>
+    <string name="snack">Snack</string>
+    <string name="minuman">Minuman</string>
+    <string name="list_menu_makanan">List Menu Makanan</string>
+    <string name="category">Category</string>
+    <string name="diskon_25">Diskon 25%</string>
+    <string name="pesan_makanan_lewat_aplikasi_dan_dapatkan_diskonmu">Pesan makanan lewat aplikasi dan dapatkan diskonmu</string>
+    <string name="mau_makan_apa_nih">Mau makan apa nih?</string>
+    <string name="hai_binarian">Hai Binarian,</string>
+</resources>
