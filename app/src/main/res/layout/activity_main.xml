@@ -14,12 +14,26 @@
         app:layout_constraintBottom_toTopOf="@id/cl_banner"
         app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/img_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ll_header_greetings"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
         <LinearLayout
             android:id="@+id/ll_header_greetings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ll_header_icon"
+            app:layout_constraintStart_toEndOf="@id/iv_profile_image"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -27,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter"
                 android:text="@string/hai_binarian"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -36,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter"
                 android:text="@string/mau_makan_apa_nih"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,16 +66,16 @@
 
             <ImageButton
                 android:id="@+id/shopping_cart"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginHorizontal="10dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_shopping_cart" />
 
             <ImageButton
                 android:id="@+id/account_circle"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginHorizontal="10dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_account_circle" />
@@ -188,10 +202,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/img_rice" />
+                android:src="@drawable/img_rice"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -214,10 +229,11 @@
             app:layout_constraintStart_toEndOf="@id/ll_category_rice"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/img_noodle" />
+                android:src="@drawable/img_noodle"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -240,10 +256,11 @@
             app:layout_constraintStart_toEndOf="@id/ll_category_noodle"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/img_snack" />
+                android:src="@drawable/img_snack"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -266,10 +283,11 @@
             app:layout_constraintStart_toEndOf="@id/ll_category_snack"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/img_drink" />
+                android:src="@drawable/img_drink"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -290,6 +308,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
+        app:layout_constraintBottom_toTopOf="@id/rv_menu"
         app:layout_constraintTop_toBottomOf="@id/cl_category">
 
         <TextView
@@ -300,11 +319,12 @@
             android:text="@string/list_menu_makanan"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="10dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_list"
@@ -313,23 +333,15 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_menu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="16dp"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl_list_menu_makanan_title">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_menu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_chainStyle="spread_inside">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
