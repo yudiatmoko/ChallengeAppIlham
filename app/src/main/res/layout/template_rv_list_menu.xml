@@ -15,11 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_menu_img"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
             tools:src="@tools:sample/avatars" />
 
         <TextView
@@ -41,7 +42,7 @@
             android:fontFamily="@font/inter"
             android:textAlignment="textStart"
             android:textSize="14sp"
-            tools:text="example price"/>
+            tools:text="example price" />
 
     </LinearLayout>
 
